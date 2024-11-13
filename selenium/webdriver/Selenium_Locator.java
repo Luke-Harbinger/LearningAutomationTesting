@@ -36,4 +36,26 @@ public class Selenium_Locator {
     public void TC_02_Class() {
         driver.findElement(By.className("header-logo"));
     }
+
+    @Test
+    public void TC_03_Name() {
+        driver.findElement(By.name("DateOfBirthDay"));
+    }
+
+    @Test
+    public void TC_04_Tagname() {
+        driver.findElement(By.tagName("input"));
+    }
+
+    @Test
+    public void TC_05_LinkText() {
+        driver.findElement(By.linkText("Shipping & returns"));
+    }
+
+    @Test
+    public void TC_06_Partial_LinkText() {
+        driver.findElement(By.partialLinkText("Apply for"));
+        driver.findElement(By.partialLinkText("for vendor"));
+        driver.findElement(By.partialLinkText("vendor account"));
+    }
 }
