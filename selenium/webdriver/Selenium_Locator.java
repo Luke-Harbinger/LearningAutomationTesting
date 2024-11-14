@@ -3,6 +3,7 @@ package webdriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -96,6 +97,11 @@ public class Selenium_Locator {
         //Partial LinkText
         driver.findElement((By.xpath("//a[contains(@href,'addresses')]")));
         driver.findElement((By.xpath("//a[contains(text(),'Addresses')]")));
+    }
+
+    @AfterClass
+    public void afterClass() {
+        driver.quit();
     }
 
 }
