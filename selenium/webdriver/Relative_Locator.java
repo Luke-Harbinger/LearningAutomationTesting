@@ -9,6 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Relative_Locator {
@@ -45,8 +46,12 @@ public class Relative_Locator {
                 .toRightOf(remembermeCheckboxBy)
                 .toLeftOf(forgotPasswordElement)
                 .below(passwordTextboxElement)
+                .near(forgotPasswordElement)
         );
         System.out.println(remembermeTextElement.getText());
+
+        List<WebElement> alllinks = driver.findElements(RelativeLocator.with(By.tagName("a")));
+        System.out.println(alllinks.size());
     }
 
     @AfterClass
